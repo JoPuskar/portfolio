@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <a href="{% url 'blog_detail' post.id %}" target="_blank" class="project project-tile">
+            <p class="project-title"><span class="code">&lt;</span>{{ post.title }}<span class="code">&#47;&gt;</span>
+            </p>
+            <small>{{ post.created_on.date }} |&nbsp; </small>
+            <p>{{ post.body | slice:':200' }}...</p>
+            <small>
+                Categories:&nbsp;
+                {% for category in post.categories.all %}
+                <a href="{% url 'blog_category' category.name %}">
+                    {{ category.name }}
+                </a>&nbsp;
+                {% endfor %}
+            </small>
+        </a>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" type="image/png" href="{% static 'images/Pj.png' %}">
+	<link href="{% static '/css/main.css' %}" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap">
+	<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+  integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+  crossorigin="anonymous"
+/>
+
+
+	<title>Puskar Joshi</title>
+</head>
+<body>
+
+	<nav id="navbar" class="nav">
+		<ul id="nav-list">
+			<li><a href="{% url 'blog_index' %}">Home</a></li>
+			<li><a href="#projects">Blog</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</nav>
+
+	<section id="home" class="welcome-section">
+		<h1>Hey I am Puskar</h1>
+		<p>a web developer</p>
+	</section>
+
+	<!--Start Project Section-->
+	
+	<section id="projects" class="project-section">
+
+
+		<h2 id="project-section-header">
+			My Blogs
+		</h2>
+		
+		<div class="project-grid">
+
+            {% block content %}{% endblock %}
+
+		</div>
+
+		<a href="{% url 'blog_index' %}" class="btn btn-show-all" target="_blank">Show all<i class="fas fa-chevron-right"></i>
+		</a>
+
+	</section>
+
+	<!--End project section-->
+	<!--Start Contacts Section-->
+
+	<section class="contact-section" id="contact">
+		<div class="contact-section-header">
+			<h2>Let's work together...</h2>
+			<p>How is your day going?</p>
+		</div>
+		<div class="contact-links">
+			<a href="https://www.facebook.com/jopuskar" class="btn contact-details" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a>
+			<a href="https://www.github.com/jopuskar" class="btn contact-details" target="_blank"><i class="fab fa-github"></i> Github</a>
+			<a href="https://instagram.com/puskarjoshi_" class="btn contact-details" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+			<a href="https://twitter.com/impuskarjoshi" class="btn contact-details" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+			<a href="mailto:puskarjoshi22@gmail.com" class="btn contact-details" target="_blank"><i class="fas fa-at"></i> Send a mail</a>
+		</div>
+	</section>
+<!--End Contact Section-->
+<!--Start Footer Section-->
+
+	<footer>
+		<p>
+			&copy; Puskar Joshi
+		</p>		
+	</footer>
+
+</body>
+</html>
